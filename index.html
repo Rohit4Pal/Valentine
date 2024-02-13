@@ -11,10 +11,7 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        background-image: url('Valentine.jpeg');
-        background-size: cover;
         background-color: pink;
-        background-repeat: no-repeat;
     }
     #container {
         text-align: center;
@@ -41,6 +38,18 @@
         }
         button {
             font-size: 16px;
+        }
+    }
+
+    /* Responsive Background Image */
+    body {
+        background-image: url('Valentine.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
+    @media screen and (max-width: 768px) {
+        body {
+            background-size: contain;
         }
     }
 </style>
