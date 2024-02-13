@@ -15,7 +15,6 @@
         background-size: cover;
         background-color: pink;
         background-repeat: no-repeat;
-        
     }
     button {
         font-size: 20px;
@@ -29,7 +28,6 @@
         background-color: red;
     }
 </style>
-
 </head>
 <body>
     <div id="message">Will you be Rohit's Valentine?</div>
@@ -37,7 +35,6 @@
     <button id="no-btn" onclick="noClicked()">No</button>
     <audio id="bg-music" src="background_music.mp3" loop></audio>
     <script>
-
         let noClickCount = 0;
         let musicStarted = false;
         
@@ -48,10 +45,11 @@
                 musicStarted = true;
             }
         }
+
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('#message').addEventListener('mouseenter', startMusic);
+            document.body.addEventListener('mousemove', startMusic);
         });
-        
+
         function yesClicked() {
             alert("Great! Rohit loves you too!");
             window.location.href = "index1.html"; // Redirect to the new page
@@ -63,10 +61,10 @@
                 window.location.href = "index1.html"; // Redirect to the new page
             } else {
                 alert("Are you sure!! You won't get a boy like Rohit.");
-                var yesButton = document.querySelector(".yes-btn");
-                var noButton = document.querySelector(".no-btn");
-                var yesButtonFontSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-                var noButtonFontSize = parseFloat(window.getComputedStyle(noButton).fontSize);
+                let yesButton = document.querySelector("#yes-btn");
+                let noButton = document.querySelector("#no-btn");
+                let yesButtonFontSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+                let noButtonFontSize = parseFloat(window.getComputedStyle(noButton).fontSize);
                 yesButton.style.fontSize = (yesButtonFontSize * 2) + "px"; // Increase font size
                 yesButton.style.width = (yesButton.offsetWidth * 2) + "px"; // Increase button width
                 yesButton.style.height = (yesButton.offsetHeight * 2) + "px"; // Increase button height
