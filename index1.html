@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Do you love Rohit?</title>
+<title>Rohit's Valentine?</title>
 <style>
     body {
         display: flex;
@@ -13,96 +13,21 @@
         margin: 0;
         background-image: url('Valentine.gif');
         background-size: cover;
-        background-color: pink;
+        background-position: center;
         background-repeat: no-repeat;
     }
-    #container {
+    .container {
         text-align: center;
     }
-    #message {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-    button {
-        font-size: 20px;
-        padding: 10px 20px;
-        margin: 10px;
-    }
-    #yes-btn {
-        background-color: green;
-    }
-    #no-btn {
-        background-color: red;
-    }
-
-    @media screen and (max-width: 768px) {
-        #message {
-            font-size: 18px;
-        }
-        button {
-            font-size: 16px;
-        }
-    }
-
-    /* Responsive Background Image */
-    body {
-        background-image: url('Valentine.jpeg');
-        background-size: cover;
-        background-position: center;
-    }
-    @media screen and (max-width: 768px) {
-        body {
-            background-size: contain;
-        }
-    }
+    /* Add additional styles as needed */
 </style>
+<link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
 </head>
 <body>
-    <div id="container">
-        <div id="message">Will you be Rohit's Valentine?</div>
-        <button id="yes-btn" onclick="yesClicked()">Yes</button>
-        <button id="no-btn" onclick="noClicked()">No</button>
+    <audio id="bg-music" src="new_background_music.mp3" autoplay loop></audio> <!-- Add the new audio element -->
+    
+    <div class="container">
+        <!-- Add new content for the page -->
     </div>
-    <audio id="bg-music" src="new_background_music.mp3" loop autoplay></audio>
-    <script>
-        let noClickCount = 0;
-        let musicStarted = false;
-        
-        function startMusic() {
-            if (!musicStarted) {
-                let bgMusic = document.getElementById('bg-music');
-                bgMusic.play();
-                musicStarted = true;
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.body.addEventListener('mousemove', startMusic);
-        });
-
-        function yesClicked() {
-            alert("Great! Rohit loves you too!");
-            window.location.href = "index1.html"; // Redirect to the new page
-        }
-
-        function noClicked() {
-            noClickCount++; // Increment the count
-            if (noClickCount === 6) {
-                window.location.href = "index1.html"; // Redirect to the new page
-            } else {
-                alert("Are you sure!! You won't get a boy like Rohit.");
-                let yesButton = document.querySelector("#yes-btn");
-                let noButton = document.querySelector("#no-btn");
-                let yesButtonFontSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-                let noButtonFontSize = parseFloat(window.getComputedStyle(noButton).fontSize);
-                yesButton.style.fontSize = (yesButtonFontSize * 2) + "px"; // Increase font size
-                yesButton.style.width = (yesButton.offsetWidth * 2) + "px"; // Increase button width
-                yesButton.style.height = (yesButton.offsetHeight * 2) + "px"; // Increase button height
-                noButton.style.fontSize = (noButtonFontSize / 2) + "px"; // Decrease font size
-                noButton.style.width = (noButton.offsetWidth / 2) + "px"; // Decrease button width
-                noButton.style.height = (noButton.offsetHeight / 2) + "px"; // Decrease button height
-            }
-        }
-    </script>
 </body>
 </html>
