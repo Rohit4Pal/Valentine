@@ -1,29 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do you love Rohit?</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do you love Rohit?</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url('Valentine.jpeg');
+        background-size: cover;
+        background-color: pink;
+        background-repeat: no-repeat;
+        
+    }
+    button {
+        font-size: 20px;
+        padding: 10px 20px;
+        margin: 10px;
+    }
+    #yes-btn {
+        background-color: green;
+    }
+    #no-btn {
+        background-color: red;
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="message">Will you be Rohit's Valentine?</div>
-        <button class="button yes-btn" onclick="yesClicked()">Yes</button>
-        <button class="button no-btn" onclick="noClicked()">No</button>
-    </div>
-
+    <div id="message">Will you be Rohit's Valentine?</div>
+    <button id="yes-btn" onclick="yesClicked()">Yes</button>
+    <button id="no-btn" onclick="noClicked()">No</button>
+    <audio id="bg-music" src="background_music.mp3" autoplay loop></audio>
     <script>
+
+        let noClickCount = 0;
         function yesClicked() {
             alert("Great! Rohit loves you too!");
+            window.location.href = "index1.html"; // Redirect to the new page
         }
 
         function noClicked() {
-            alert("Are you sure!! You won't get a boy like Rohit.");
-            var yesButton = document.querySelector(".yes-btn");
-            var noButton = document.querySelector(".no-btn");
-            yesButton.style.fontSize = "24px"; // Reset font size
-            noButton.style.fontSize = "10px"; // Reset font size
+            noClickCount++; // Increment the count
+            if (noClickCount === 6) {
+                window.location.href = "index1.html"; // Redirect to the new page
+            } else {
+                alert("Are you sure!! You won't get a boy like Rohit.");
+                var yesButton = document.querySelector(".yes-btn");
+                var noButton = document.querySelector(".no-btn");
+                var yesButtonFontSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+                var noButtonFontSize = parseFloat(window.getComputedStyle(noButton).fontSize);
+                yesButton.style.fontSize = (yesButtonFontSize * 2) + "px"; // Increase font size
+                yesButton.style.width = (yesButton.offsetWidth * 2) + "px"; // Increase button width
+                yesButton.style.height = (yesButton.offsetHeight * 2) + "px"; // Increase button height
+                noButton.style.fontSize = (noButtonFontSize / 2) + "px"; // Decrease font size
+                noButton.style.width = (noButton.offsetWidth / 2) + "px"; // Decrease button width
+                noButton.style.height = (noButton.offsetHeight / 2) + "px"; // Decrease button height
+            }
         }
     </script>
 </body>
