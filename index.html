@@ -48,7 +48,9 @@
                 musicStarted = true;
             }
         }
-        window.addEventListener('mousemove', startMusic);
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#message').addEventListener('mouseenter', startMusic);
+        });
         
         function yesClicked() {
             alert("Great! Rohit loves you too!");
