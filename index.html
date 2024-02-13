@@ -35,10 +35,21 @@
     <div id="message">Will you be Rohit's Valentine?</div>
     <button id="yes-btn" onclick="yesClicked()">Yes</button>
     <button id="no-btn" onclick="noClicked()">No</button>
-    <audio id="bg-music" src="background_music.mp3" autoplay loop></audio>
+    <audio id="bg-music" src="background_music.mp3" loop></audio>
     <script>
 
         let noClickCount = 0;
+        let musicStarted = false;
+        
+        function startMusic() {
+            if (!musicStarted) {
+                let bgMusic = document.getElementById('bg-music');
+                bgMusic.play();
+                musicStarted = true;
+            }
+        }
+        window.addEventListener('mousemove', startMusic);
+        
         function yesClicked() {
             alert("Great! Rohit loves you too!");
             window.location.href = "index1.html"; // Redirect to the new page
