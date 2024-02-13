@@ -16,6 +16,13 @@
         background-color: pink;
         background-repeat: no-repeat;
     }
+    #container {
+        text-align: center;
+    }
+    #message {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
     button {
         font-size: 20px;
         padding: 10px 20px;
@@ -27,12 +34,23 @@
     #no-btn {
         background-color: red;
     }
+
+    @media screen and (max-width: 768px) {
+        #message {
+            font-size: 18px;
+        }
+        button {
+            font-size: 16px;
+        }
+    }
 </style>
 </head>
 <body>
-    <div id="message">Will you be Rohit's Valentine?</div>
-    <button id="yes-btn" onclick="yesClicked()">Yes</button>
-    <button id="no-btn" onclick="noClicked()">No</button>
+    <div id="container">
+        <div id="message">Will you be Rohit's Valentine?</div>
+        <button id="yes-btn" onclick="yesClicked()">Yes</button>
+        <button id="no-btn" onclick="noClicked()">No</button>
+    </div>
     <audio id="bg-music" src="background_music.mp3" loop></audio>
     <script>
         let noClickCount = 0;
