@@ -1,0 +1,45 @@
+/* Reset default browser styles */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('valentines.jpg'); /* Replace 'valentines.jpg' with your actual background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Message styles */
+.message {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.yes-btn {
+    background-color: green;
+    color: white;
+}
+
+.no-btn {
+    background-color: red;
+    color: white;
+}
