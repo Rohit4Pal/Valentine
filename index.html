@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do you love Rohit?</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url('valentines.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    button {
+        font-size: 20px;
+        padding: 10px 20px;
+        margin: 10px;
+    }
+    #yes-btn {
+        background-color: green;
+    }
+    #no-btn {
+        background-color: red;
+    }
+</style>
+</head>
+<body>
+    <div id="message">Will you be Rohit's Valentine?</div>
+    <button id="yes-btn" onclick="yesClicked()">Yes</button>
+    <button id="no-btn" onclick="noClicked()">No</button>
+
+    <script>
+        function yesClicked() {
+            alert("Great! Rohit loves you too!");
+        }
+
+        function noClicked() {
+            alert("Are you sure!! You won't get a boy like Rohit.");
+            var yesButton = document.getElementById("yes-btn");
+            var noButton = document.getElementById("no-btn");
+            var yesButtonSize = window.getComputedStyle(yesButton).getPropertyValue("font-size");
+            var noButtonSize = window.getComputedStyle(noButton).getPropertyValue("font-size");
+            yesButton.style.fontSize = (parseInt(yesButtonSize) * 2) + "px";
+            noButton.style.fontSize = (parseInt(noButtonSize) / 2) + "px";
+        }
+    </script>
+</body>
+</html>
